@@ -15,8 +15,6 @@ services:
     volumes:
       - static_volume:/backend_static
       - media:/app/media
-    depends_on:
-      - postresql
 
   frontend:
     container_name: frontend
