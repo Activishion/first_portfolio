@@ -1,0 +1,960 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@500&display=swap');
+
+////////////////////// Global ////////////////////////
+* {
+    margin: 0;
+    padding: 0;
+
+    html, body {
+        height: 100%;
+    }
+    
+    a, p, h1, table, label {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 400;
+    }
+    
+    table {
+        max-width: 97%;
+    }
+    
+    td {
+        padding: 2px;
+    }
+    
+    th {
+        font-size: 14px;
+    
+        &:nth-child(2){
+            padding: 3px;
+        }
+    
+        &:nth-child(3){
+            padding: 3px;
+        }
+    }
+}
+
+/////////////////////// Local ///////////////////////
+.wrapper{
+    background-color: #EAEFF6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+    .header{
+        width: 100%;
+
+        .container{
+            width: 100%;
+            max-width: 1920px;
+            margin: 10px 0;
+            display: flex;
+            justify-content: space-around;
+            height: 80px;
+
+            .logo{
+                width: auto;
+                height: 60px;
+            }
+    
+            .header__inner{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+    
+                nav{
+                    font-size: 14px;
+                    text-transform: uppercase;
+    
+                    .nav__link{
+                        display: inline-block;
+                        vertical-align: top;
+                        margin: 0 10px;
+                        color: black;
+                        text-decoration: none;
+                        transition: color .1s linear;
+                        position: relative;
+                        font-size: 14px;
+                        line-height: 26px;
+                    }
+                        .first:hover,
+                        .second:hover,
+                        .third:hover,
+                        .fouth:hover,
+                        .fifth:hover {
+                            color: #597193;
+                            text-decoration: underline;
+                        }
+                }
+            }
+        }
+    }
+
+    .main {
+        flex-grow: 1;
+
+        .main_header{
+            font-size: 30px;
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .container{
+            width: 90%;
+            display: block;
+            margin: 0 auto;
+
+            .main_text{
+                text-align: justify;
+                text-indent: 50px;
+                line-height: 25px;
+
+                a{
+                    padding-left: 10px;
+                }
+            }
+
+            .main_text_container{
+                margin-left: 50px;
+            }
+
+            .text{
+                text-align: justify;
+                line-height: 25px;
+            }
+        }
+    }
+
+    .journal{
+        flex-grow: 1;
+
+        .journal_header{
+            font-size: 30px;
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .pagination{
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+
+            .page_active{
+                padding: 5px;
+                margin: 5px;
+                border-radius: 50%;
+                cursor: pointer;
+                width: 20px;
+                height: 20px;
+                background-color: #4870c5;
+
+                p{
+                    padding-left: 6px;
+                }
+            }
+
+            .page{
+                border-radius: 50%;
+                padding: 5px;
+                margin: 5px;
+                cursor: pointer;
+                width: 20px;
+                height: 20px;
+                background-color: #c4d6ee;
+
+                p{
+                    padding-left: 5px;
+                }
+            }
+        }
+
+        table{
+            width: 95%;
+            margin: 0 auto;
+            text-align: center;
+            border-bottom: 2px solid #dfdfdf;
+            border-radius: 6px;
+            border-collapse: separate;
+            border-spacing: 0px;
+
+            thead tr{
+                color: #ffffff;
+                font-weight: bold;
+                background: #28478a;
+            }
+
+            tbody tr:nth-child(1n){
+                background: #c4d6ee;
+            }
+
+            td, th{
+                border: 1px solid black;
+                height: 25px;
+                overflow: hidden;
+
+                .buttom_table{
+                    width: 100%;
+                    border: none;
+                    background: #c4d6ee;
+                    height: 25px;
+                    cursor: pointer;
+
+                    &:active{
+                        background-color: #9bb6f1;
+                    }
+                }
+            }
+
+            td:last-child:active{
+                background-color: #9bb6f1;
+            }
+        }
+    }
+
+    .journalId{
+        flex-grow: 1;
+        margin: 0 70px;
+
+        .header_container{
+            margin-top: 40px;
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+
+            .header_container_left{
+                display: flex;
+                flex-direction: column;
+                align-items: baseline;
+                width: 50%;
+
+                .header_container_create{
+                    display: flex;
+
+                    .create_left{
+                        font-weight: 600;
+                        margin: 0 10px 10px 0;
+                    }
+                }
+
+                .container{
+                    display: flex;
+                    justify-content: end;
+    
+                    .header_left{
+                        font-weight: 600;
+                        margin: 0 10px 10px 0;
+                    }
+                }
+            }
+
+            .header_container_right{
+                width: 60%;
+
+                .container_create{
+                    margin-bottom: 20px;
+
+                    .container_create_head{
+                        font-weight: 700;
+                        padding-bottom: 10px;
+                        text-decoration: underline;
+                    }
+
+                    .header_container_create{
+                        display: flex;
+
+                        .create_left{
+                            font-weight: 600;
+                            margin: 0 10px 10px 0;
+                        }
+                    }
+                }
+            }
+
+            
+        }
+
+        .bottom_container{
+            margin-top: 50px;
+
+            .message_button{
+                background-color: #c3d1e5;
+                padding: 10px 40px;
+                border-radius: 10px;
+                border: none;
+                cursor: pointer;
+                width: 160px;
+    
+                &:active{
+                    background-color: #a8c0e3;
+                }
+            }
+        }
+    }
+
+    .message{
+        flex-grow: 1;
+
+        .message_header{
+            font-size: 30px;
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        table{
+            margin: 0 auto;
+            text-align: center;
+            border-bottom: 2px solid #dfdfdf;
+            border-radius: 6px;
+            border-collapse: separate;
+            border-spacing: 0px;
+            font-size: 14px;
+            width: 95%;
+
+            thead tr{
+                color: #ffffff;
+                font-weight: bold;
+                background: #28478a;
+            }
+
+            tbody tr:nth-child(1n){
+                background: #c4d6ee;
+            }
+
+            td, th{
+                border: 1px solid black;
+                height: 25px;
+
+                .buttom_table{
+                    width: 100%;
+                    height: 25px;
+                    border: none;
+                    background: #c4d6ee;
+                    cursor: pointer;
+
+                    &:active{
+                        background-color: #9bb6f1;
+                    }
+                }
+            }
+
+            td:nth-child(1){
+                width: 140px;
+            }
+
+            td:nth-child(4){
+                max-width: 200px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                padding-left: 5px;
+            }
+
+            td:nth-child(5){
+                max-width: 230px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                padding-left: 5px;
+            }
+
+            td:nth-child(6){
+                max-width: 180px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                padding-left: 5px;
+            }
+        }
+
+        .pagination{
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+
+            .page_active{
+                padding: 5px;
+                margin: 5px;
+                border-radius: 50%;
+                cursor: pointer;
+                width: 20px;
+                height: 20px;
+                background-color: #4870c5;
+
+                p{
+                    padding-left: 6px;
+                }
+            }
+
+            .page{
+                border-radius: 50%;
+                padding: 5px;
+                margin: 5px;
+                cursor: pointer;
+                width: 20px;
+                height: 20px;
+                background-color: #c4d6ee;
+
+                p{
+                    padding-left: 5px;
+                }
+            }
+        }
+    }
+
+    .messageId{
+        flex-grow: 1;
+        margin: 0 70px;
+
+        .message_header{
+            display: flex;
+            justify-content: space-between;
+            font-size: 20px;
+            margin: 20px 0;
+
+            .date{
+                display: flex;
+
+                p{
+                    font-size: 18px;
+                }
+
+                .date_text{
+                    margin-right: 10px;
+                    font-weight: 600;
+                }
+            }
+        }
+
+        .paodzo_flex{
+            display: flex;
+            font-size: 18px;
+
+            .weight{
+                font-weight: 600;
+            }
+
+            p{
+                margin-right: 10px;
+            }
+        }
+
+        p{
+            padding-bottom: 10px;
+        }
+
+        .main{
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+
+            .main_h{
+                font-size: 20px;
+                font-weight: 600;
+                margin-bottom: 10px;
+            }
+
+            .main_text{
+                font-size: 14px;
+                text-indent: 50px;
+            }
+        }
+
+        .author{
+            display: flex;
+
+            .weight{
+                font-weight: 600;
+            }
+
+            p{
+                margin-right: 10px;
+            }
+        }
+
+        .bottom_container{
+            margin-top: 50px;
+
+            .message_button{
+                background-color: #c3d1e5;
+                padding: 10px 40px;
+                border-radius: 10px;
+                border: none;
+                cursor: pointer;
+    
+                &:active{
+                    background-color: #a8c0e3;
+                }
+            }
+        }
+    }
+
+    .subscriptions{
+        flex-grow: 1;
+
+        .container_forms{
+            margin-top: 150px;
+        }
+
+        .forms{
+            place-items: center;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: -20px;
+
+            .heade_form{
+                font-size: 23px;
+                margin-bottom: 20px;
+            }
+
+            .input-group{
+                position: relative;
+                font-family: 'Alegreya Sans SC', sans-serif;
+
+                label {
+                    padding: 0 10px;
+                    background-color: #EAEFF6;
+                    color: #000;
+                    position: absolute;
+                    top: 50%;
+                    left: 15px;
+                    transform: translateY(-50%);
+                    text-transform: capitalize;
+                    pointer-events: none;
+                    font-size: 20px;
+                    transition: all 0.3s;
+                }
+
+                #labelNull {
+                    padding: 0 10px;
+                    background-color: #EAEFF6;
+                    color: #000;
+                    position: absolute;
+                    top: 50%;
+                    left: 15px;
+                    transform: translateY(-50%);
+                    text-transform: capitalize;
+                    pointer-events: none;
+                    font-size: 20px;
+                    transition: all 0.3s;
+                    border: none;
+                }
+
+                #labelNotNull {
+                    top: 10px;
+                    font-size: 16px;
+                    border: 1px solid #000;
+                    transition: all 0.3s;
+                }
+
+                input {
+                    padding: 18px 15px;
+                    width: 500px;
+                    border: 1px solid #000;
+                    outline: none;
+                    color: #000;
+                    font-size: 20px;
+                    background-color: transparent;
+                    border-radius: 10px;
+                    margin: 10px 0;
+                }
+
+                input:focus + label,
+                input:not(:placeholder-shown) + label {
+                    top: 10px;
+                    font-size: 16px;
+                    border: 1px solid #000;
+                }
+
+                select {
+                    padding: 18px 15px;
+                    width: 530px;
+                    border: 1px solid #000;
+                    outline: none;
+                    color: #000;
+                    font-size: 20px;
+                    background-color: transparent;
+                    border-radius: 10px;
+                    margin: 10px 0;
+                    -webkit-appearance: none;
+                    -moz-appearance: none;
+                    appearance: none;
+                }
+
+                select:focus + label{
+                    top: 10px;
+                    font-size: 16px;
+                    border: 1px solid #000;
+                }
+
+                select:invalid { color: gray; }
+            }
+
+            .container_button {
+                margin-top: 10px;
+                display: flex;
+                justify-content: center;
+
+                button{
+                    width: 170px;
+                    height: 40px;
+                    border: none;
+                    border-radius: 10px;
+                    background-color: #c3d1e5;
+                    cursor: pointer;
+                    margin-bottom: 15px;
+    
+                    &:active{
+                        background-color: #a8c0e3;
+                    }
+                }
+            }
+
+            .push_report_container {
+                position: relative;
+                top: 5px;
+
+                .error {
+                    color: red;
+                }
+
+                .good {
+                    color: green;
+                }
+            }
+
+            .dirtyReport {
+                position: relative;
+                right: 180px;
+            }
+
+            .dirtyEmail {
+                position: relative;
+                right: 195px;
+            }
+
+            .dirtySubscription {
+                position: relative;
+                right: 195px;
+            }
+
+            .dirtyReportNews {
+                position: relative;
+                right: 195px;
+            }
+
+            .dirtyFioReport {
+                position: relative;
+                right: 215px;
+            }
+
+            .dirtyFioNews {
+                position: relative;
+                right: 215px;
+            }
+        }
+
+        .push_report_container_response {
+            display: flex;
+        justify-content: center;
+        margin-top: 20px;
+        color: green;
+        }
+    }
+
+    .errorPage{
+        flex-grow: 1;
+
+        h1{
+            display: flex;
+            justify-content: center;
+            margin-top: 100px;
+        }
+
+        .error_container{
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+
+            .error_return{
+                display: flex;
+                justify-content: center;
+                width: 300px;
+                border: 1px solid black;
+                border-radius: 10px;
+                text-decoration: none;
+                color: black;
+
+                &:hover{
+                    background-color: #28478a;
+                    color: white;
+                }
+            }
+        }
+    }
+
+    .footer {
+        .footer_content_items{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+
+            .footer_item{
+                padding: 20px 0;
+
+                .footer_item_container{
+                    display: flex;
+                    justify-content: space-around;
+                    width: 400px;
+                    padding: 2px 0;
+                }
+
+                .footer_text{
+                    font-size: 13px;
+                }
+            }
+        }
+    }
+}
+
+.footer_item_container {
+    display: flex;
+
+    p {
+        padding-right: 10px;
+    }
+}
+
+
+.modal {
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba($color: #000000, $alpha: 0.4);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+.modal.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.modal__content {
+    padding: 30px;
+    border-radius: 12px;
+    background-color: #EAEFF6;
+
+    .modal_main {
+        p {
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+        .dirtyReportModal {
+            padding: 20px 0 0 0;
+        }
+
+        .push_report_container {
+            margin-top: 0 !important;
+        }
+    }
+}
+
+.modalWindow {
+
+    button {
+        &:active {
+            background-color: #a8c0e3;
+        }
+    }
+}
+
+.modalWindowButton {
+    width: 170px;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    background-color: #c3d1e5;
+    cursor: pointer;
+}
+
+
+.modal_main{
+    place-items: left;
+    display: flex;
+    flex-direction: column;
+    background-color: #EAEFF6;
+
+    .heade_form{
+        font-size: 30px;
+        margin-bottom: 5px;
+    }
+
+    .input-group{
+        position: relative;
+        font-family: 'Alegreya Sans SC', sans-serif;
+
+        label {
+            padding: 0 10px;
+            background-color: #EAEFF6;
+            color: #000;
+            position: absolute;
+            top: 50%;
+            left: 15px;
+            transform: translateY(-50%);
+            text-transform: capitalize;
+            pointer-events: none;
+            font-size: 20px;
+            transition: all 0.3s;
+        }
+
+        #labelNull {
+            padding: 0 10px;
+            background-color: #EAEFF6;
+            color: #000;
+            position: absolute;
+            top: 50%;
+            left: 15px;
+            transform: translateY(-50%);
+            text-transform: capitalize;
+            pointer-events: none;
+            font-size: 20px;
+            transition: all 0.3s;
+            border: none;
+        }
+
+        #labelNotNull {
+            top: 10px;
+            font-size: 16px;
+            border: 1px solid #000;
+            transition: all 0.3s;
+        }
+
+        input {
+            padding: 18px 15px;
+            width: 500px;
+            border: 1px solid #000;
+            outline: none;
+            color: #000;
+            font-size: 20px;
+            background-color: transparent;
+            border-radius: 10px;
+            margin: 10px 0;
+        }
+
+        input:focus + label,
+        input:not(:placeholder-shown) + label {
+            top: 10px;
+            font-size: 16px;
+            border: 1px solid #000;
+        }
+
+        select {
+            padding: 18px 15px;
+            width: 530px;
+            border: 1px solid #000;
+            outline: none;
+            color: #000;
+            font-size: 20px;
+            background-color: transparent;
+            border-radius: 10px;
+            margin: 10px 0;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+        }
+
+        select:focus + label{
+            top: 10px;
+            font-size: 16px;
+            border: 1px solid #000;
+        }
+
+        select:invalid { color: gray; }
+    }
+
+    .container_button {
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
+
+        button{
+            width: 170px;
+            height: 40px;
+            border: none;
+            border-radius: 10px;
+            background-color: #c3d1e5;
+            cursor: pointer;
+
+            &:active{
+                background-color: #a8c0e3;
+            }
+        }
+    }
+
+    .push_report_container {
+        margin-top: 20px;
+
+        .error {
+            color: red;
+        }
+
+        .good {
+            color: green;
+        }
+    }
+
+    .dirtyReport {
+        position: relative;
+        right: 180px;
+    }
+
+    .dirtyEmail {
+        position: relative;
+        right: 195px;
+    }
+
+    .dirtySubscription {
+        position: relative;
+        right: 195px;
+    }
+
+    .dirtyReportNews {
+        position: relative;
+        right: 195px;
+    }
+
+    .dirtyFioReport {
+        position: relative;
+        right: 215px;
+    }
+
+    .dirtyFioNews {
+        position: relative;
+        right: 215px;
+    }
+}
+
+.buttonGroup {
+    width: 170px;
+    margin: 0 auto 0 auto;
+}
+
+.modalWindow::before {
+    margin-bottom: 100px;
+}
+
+.statusSubscription, .statusSubscriptions {
+    margin: 20px;
+}
